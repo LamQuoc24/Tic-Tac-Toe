@@ -4,7 +4,7 @@ let board = document.querySelector("#board");
 let reset = document.querySelector("#butt-on");
 let turn = 2;
 let boardArr = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-
+let display = document.querySelector("#winner");
 
 const chickenDinner = () => {
   if (
@@ -17,10 +17,9 @@ const chickenDinner = () => {
     (boardArr[0] === boardArr[4] && boardArr[0] === boardArr[8]) ||
     (boardArr[2] === boardArr[4] && boardArr[2] === boardArr[6])
   ) {
-    console.log("Winner Winner");
-  }
-  else if (turn >= 11) {
-  console.log("You both are failures");
+    display.innerText = "Winner Winner Chicken Dinner";
+  } else if (turn >= 11) {
+    display.innerText = "Loser";
   }
 };
 
@@ -47,7 +46,7 @@ for (let i = 0; i < 9; i++) {
       boardArr[square.id] = false;
       console.log(boardArr);
     }
-chickenDinner();
+    chickenDinner();
   });
   board.appendChild(square);
 }
@@ -62,5 +61,6 @@ reset.addEventListener("click", () => {
     lastSquare.click = false;
     turn = 2;
     boardArr = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+    display.innerText = "";
   });
 });
