@@ -5,6 +5,26 @@ let reset = document.querySelector("#butt-on");
 let turn = 2;
 let boardArr = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
+
+const chickenDinner = () => {
+  if (
+    (boardArr[0] === boardArr[1] && boardArr[0] === boardArr[2]) ||
+    (boardArr[3] === boardArr[4] && boardArr[3] === boardArr[5]) ||
+    (boardArr[6] === boardArr[7] && boardArr[6] === boardArr[8]) ||
+    (boardArr[0] === boardArr[3] && boardArr[0] === boardArr[6]) ||
+    (boardArr[1] === boardArr[4] && boardArr[1] === boardArr[7]) ||
+    (boardArr[2] === boardArr[5] && boardArr[2] === boardArr[8]) ||
+    (boardArr[0] === boardArr[4] && boardArr[0] === boardArr[8]) ||
+    (boardArr[2] === boardArr[4] && boardArr[2] === boardArr[6])
+  ) {
+    console.log("Winner Winner");
+  }
+  else if (turn >= 11) {
+  console.log("You both are failures");
+  }
+};
+
+// chickenDinner();
 //!--------------------------------Yeet----------------------------------------*/
 
 for (let i = 0; i < 9; i++) {
@@ -27,6 +47,7 @@ for (let i = 0; i < 9; i++) {
       boardArr[square.id] = false;
       console.log(boardArr);
     }
+chickenDinner();
   });
   board.appendChild(square);
 }
@@ -45,23 +66,3 @@ reset.addEventListener("click", () => {
 });
 
 //! ---------------------------- //!Win Condition ---------------------------- */
-
-const chickenDinner = () => {
-  if (
-    (boardArr[0] === boardArr[1] && boardArr[0] === boardArr[2]) ||
-    (boardArr[3] === boardArr[4] && boardArr[3] === boardArr[5]) ||
-    (boardArr[6] === boardArr[7] && boardArr[6] === boardArr[8]) ||
-    (boardArr[0] === boardArr[3] && boardArr[0] === boardArr[6]) ||
-    (boardArr[1] === boardArr[4] && boardArr[1] === boardArr[7]) ||
-    (boardArr[2] === boardArr[5] && boardArr[2] === boardArr[8]) ||
-    (boardArr[0] === boardArr[4] && boardArr[0] === boardArr[8]) ||
-    (boardArr[2] === boardArr[4] && boardArr[2] === boardArr[6])
-  ) {
-    console.log("Winner Winner");
-  }
-  else if (turn >= 11) {
-  console.log("You both are failures");
-  }
-};
-
-chickenDinner();
