@@ -1,0 +1,40 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    text-decoration: underline;
+}
+
+#board {
+    display: flex;
+    flex-wrap: wrap;
+    background: white;
+    /* border: black 1px solid; */
+    height: 290px;
+    width: 290px;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.square{
+    background: black;
+    height: 90px;
+    width: 90px;
+}
