@@ -17,7 +17,10 @@ const chickenDinner = () => {
     (boardArr[0] === boardArr[4] && boardArr[0] === boardArr[8]) ||
     (boardArr[2] === boardArr[4] && boardArr[2] === boardArr[6])
   ) {
-    display.innerText = "Winner Winner Chicken Dinner";
+    if (event.target.click === true) {
+      display.innerText = "1. Winner Winner Chicken Dinner";
+    } else if (event.target.click === false)
+      display.innerText = "2. Winner Winner Chicken Dinner";
   } else if (turn >= 11) {
     display.innerText = "Loser";
   }
