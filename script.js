@@ -1,25 +1,26 @@
-let board = document.querySelector("#board");
-let squares = document.querySelectorAll(".square")
+//! -------------------------------- Variables ------------------------------- */
 
+let board = document.querySelector("#board");
 let turn = 2;
+
+//! ---------------------------------Yeet---------------------------------------- */
 
 for (let i = 0; i < 9; i++) {
   const square = document.createElement("div");
-  square.addEventListener("click", function mickey() {
-    if ((square.style.backgroundColor = "black" && turn % 2 === 0)) {
-      square.style.backgroundColor = "blue";
-      turn ++
-    } else if ((square.style.backgroundColor = "black" && turn % 2 !== 0)) {
-      square.style.backgroundColor = "red";
-      turn ++
+  square.classList.add("square");
+  square.click = false;
+  square.addEventListener("click", () => {
+    if (square.click === false && turn % 2 === 0) {
+      square.style.backgroundColor = "#B2BEBF";
+      turn++;
+      square.click = true;
+    } else if (square.click === false && turn % 2 !== 0) {
+      square.style.backgroundColor = "#E3C75F";
+      turn++;
+      square.click = true;
     }
   });
-  square.classList.add("square");
   board.appendChild(square);
 }
+//! -------------------------------- Reset --------------------------------*/
 
-let reset = () =>{
-
-}
-
-reset();
