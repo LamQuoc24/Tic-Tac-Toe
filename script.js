@@ -17,16 +17,16 @@ const chickenDinner = () => {
     (boardArr[0] === boardArr[4] && boardArr[0] === boardArr[8]) ||
     (boardArr[2] === boardArr[4] && boardArr[2] === boardArr[6])
   ) {
-    if (event.target.click === true) {
-      display.innerText = "1. Winner Winner Chicken Dinner";
-    } else if (event.target.click === false)
-      display.innerText = "2. Winner Winner Chicken Dinner";
+    if (boardArr[event.target.id] === true) {
+      display.innerText = "Winner Winner Chicken Dinner for Player 1";
+    } else if (boardArr[event.target.id] === false) {
+      display.innerText = "Winner Winner Chicken Dinner for Player 2";
+    }
   } else if (turn >= 11) {
     display.innerText = "Loser";
   }
 };
 
-// chickenDinner();
 //!--------------------------------Yeet----------------------------------------*/
 
 for (let i = 0; i < 9; i++) {
@@ -41,13 +41,11 @@ for (let i = 0; i < 9; i++) {
       turn++;
       square.click = true;
       boardArr[square.id] = true;
-      console.log(boardArr);
     } else if (square.click === false && turn % 2 !== 0) {
       square.style.backgroundColor = "#E3C75F";
       turn++;
       square.click = true;
       boardArr[square.id] = false;
-      console.log(boardArr);
     }
     chickenDinner();
   });
