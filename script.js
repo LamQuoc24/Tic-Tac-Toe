@@ -6,6 +6,8 @@ let turn = 2;
 let boardArr = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 let display = document.querySelector("#winner");
 
+//! ---------------------------- Winning Condition --------------------------- */
+
 const chickenDinner = () => {
   if (
     (boardArr[0] === boardArr[1] && boardArr[0] === boardArr[2]) ||
