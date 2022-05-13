@@ -25,7 +25,7 @@ const chickenDinner = () => {
       display.innerText = "Winner Winner Chicken Dinner for Player 2";
     }
   } else if (turn >= 11) {
-    display.innerText = "Loser";
+    display.innerText = "Losers";
   }
 };
 
